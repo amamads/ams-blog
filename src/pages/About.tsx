@@ -4,7 +4,7 @@ import { H4, P } from "@/shared/components/Typography";
 
 export const About = () => {
   return (
-    <div className="space-y-15">
+    <div className="space-y-15 max-lg:px-5">
       <PageTitle titleClassName="normal-case!">John Doe</PageTitle>
       <main className="space-y-8">
         <img src={userImage} />

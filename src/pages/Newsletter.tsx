@@ -5,7 +5,7 @@ import { Input } from "@/shared/ui/input";
 
 export const Newsletter = () => {
   return (
-    <div>
+    <div className="max-lg:px-5">
       <header className="py-7.5 flex-center flex-col gap-10 text-center">
         <div className="space-y-6">
           <div className="space-y-3">
@@ -17,21 +17,25 @@ export const Newsletter = () => {
             technology, <br /> solutions, and updates.
           </P>
         </div>
-        <div className="grid grid-cols-[auto_1fr] justify-items-start gap-y-2 gap-x-4">
-          <Input placeholder="Enter your email" className="dark:bg-foreground! w-90 h-12"/>
+        <div className="grid grid-cols-[auto_1fr] justify-items-start  gap-4 md:gap-y-2 items-center">
+          <Input
+            placeholder="Enter your email"
+            className="dark:bg-foreground! md:min-w-90 h-12 max-md:col-span-2"
+          />
           <Button variant="secondary" size="secondary">
             Subscribe
           </Button>
-          <Small>We care about your data in our <span className="underline">privacy policy</span></Small>
+          <Small>
+            We care about your data in our{" "}
+            <span className="underline">privacy policy</span>
+          </Small>
         </div>
       </header>
-      <main className="py-8">
-          <H4 className="col-span-2">Recent blog posts</H4>
-          <div className="flex gap-12">
-          <Post />
-          <Post />
-          <Post />
-          </div>
+      <main className="py-8 grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <H4 className="md:col-span-2 lg:col-span-3">Recent blog posts</H4>
+        <Post />
+        <Post />
+        <Post />
       </main>
     </div>
   );
