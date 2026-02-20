@@ -4,17 +4,16 @@ import type { PropsWhitClassName } from "../types";
 
 const textStyls = {
   base: "scroll-m-20",
-  // h1: "font-bold uppercase text-center h-[87px] text-7xl border-t border-b border-foreground w-full sm:text-[160.8px] sm:h-[195px] md:text-[243.8px] md:h-[295px]",
-  h1: "font-bold uppercase text-center text-nowrap h-[87px] text-7xl w-full sm:text-[160.8px] sm:h-[195px] md:text-[243.8px] md:h-[295px]",
+  h1: "font-bold uppercase text-center text-nowrap leading-none text-[clamp(3rem,18vw,1440px)]",
   h2: "text-5xl font-semibold tracking-[-0.2%]",
   h3: "text-4xl font-bold leading-8",
   h4: "font-semibold text-2xl",
   h5: "text-lg md:text-xl font-semibold",
-  h6: "text-lg font-semibold",
+  h6: "font-bold",
   p: "text-base text-card-foreground",
   lead: "text-lg",
-  small: "text-sm",
-  caption: "text-[#6941C6] text-sm",
+  small: "text-sm text-card-foreground",
+  caption: "text-secondary text-sm",
 };
 
 function createTypograghy(

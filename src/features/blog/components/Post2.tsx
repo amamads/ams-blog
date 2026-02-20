@@ -1,4 +1,4 @@
-import image from "@/assets/Image.png";
+import image from "@/assets/Image-4.png";
 import { Caption, H4, P } from "@/shared/components/Typography";
 import { cn } from "@/shared/lib/utils";
 import type { PropsWhitClassName } from "@/shared/types";

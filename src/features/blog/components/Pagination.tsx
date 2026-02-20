@@ -2,14 +2,11 @@ import { Small } from "@/shared/components/Typography";
 import { cn } from "@/shared/lib/utils";
 import { Button } from "@/shared/ui/button";
 import {
-    Pagination,
-    PaginationContent,
-    PaginationItem
+  Pagination,
+  PaginationContent,
+  PaginationItem,
 } from "@/shared/ui/pagination";
-import {
-    ArrowLeft,
-    ArrowRight
-} from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 function getPages(pageCount: number, currentPage: number) {
   return [1, 2, 3, 0, 8, 9, 10];
@@ -33,7 +30,7 @@ const PaginationBtns = ({
   const pages = getPages(pageCount, currentPage);
   return (
     <Pagination>
-      <PaginationContent className="flex-col gap-5 sm:flex-row sm:justify-between sm:w-full">
+      <PaginationContent className="flex-col gap-5 md:flex-row md:justify-between md:w-full">
         <PaginationItem>
           <Button
             variant="ghost"
@@ -52,9 +49,9 @@ const PaginationBtns = ({
             if (pageNum === 0)
               return (
                 <PaginationItem key={`${pageNum} ${i}`}>
-                    <Button variant='ghost' size='icon'>
-                  <Small>...</Small>
-                    </Button>
+                  <Button variant="ghost" size="icon">
+                    <Small>...</Small>
+                  </Button>
                 </PaginationItem>
               );
             return (
@@ -64,9 +61,8 @@ const PaginationBtns = ({
                   size="icon"
                   className={cn(
                     "rounded-lg",
-                    currentPage === pageNum
-                      ? "bg-primary! text-primary-foreground"
-                      : "",
+                    currentPage === pageNum &&
+                      "bg-secondary-foreground text-secondary dark:bg-primary! dark:text-primary-foreground",
                   )}
                   // onClick={() => table?.setPageIndex(pageNum - 1)}
                 >

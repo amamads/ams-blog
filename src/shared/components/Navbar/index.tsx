@@ -11,12 +11,12 @@ export default function Navbar({ className }: PropsWhitClassName) {
   const { pathname } = useLocation();
   return (
     <nav
-      className={cn(className, "w-full p-5 flex justify-between items-center")}
+      className={cn(className, "w-full p-5 lg:px-0! flex justify-between items-center")}
     >
-      <H4>Your Name</H4>
-      <MenuSheet className="sm:hidden" />
+      <H4 className="text-nowrap">Your Name</H4>
+      <MenuSheet className="md:hidden" />
 
-      <div className="max-sm:hidden flex gap-3.5">
+      <div className="max-md:hidden flex items-center gap-3.5">
         {navbarItems.map(({ title, path }) => (
           <Button
             variant="ghost"
