@@ -1,6 +1,6 @@
 export const ROUTES = {
   blog:'/',
-  blogDetail:'/:blogDetail',
+  blogDetail:'blog/:blogDetail',
   newsletter:'/newsletter',
   projects:'/projects',
   about:'/about',
