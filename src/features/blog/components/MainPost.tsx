@@ -30,7 +30,7 @@ export default function MainPost({
           <P>{description}</P>
         </div>
         <footer className="flex gap-2">
-          {badges.map(badge=><PostBadge title={badge}/>)}
+          {badges.map((badge,i)=><PostBadge key={i} title={badge}/>)}
           {/* <Button variant="purple" size="special">
             Design
           </Button>

@@ -19,6 +19,7 @@ export default function Navbar({ className }: PropsWhitClassName) {
       <div className="max-md:hidden flex items-center gap-3.5">
         {navbarItems.map(({ title, path }) => (
           <Button
+          key={title}
             variant="ghost"
             size="lg"
             className={cn(

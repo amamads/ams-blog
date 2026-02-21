@@ -19,7 +19,7 @@ export const Blog = ({ className }: PropsWhitClassName) => {
       <main className="px-8 lg:px-0">
         <div className="py-7.5 grid gap-8 lg:grid-cols-2">
           <H4 className="lg:col-span-2">Recent blog posts</H4>
-          <MainPost data={data[0]}/>
+          <MainPost data={data[0]} className="lg:row-span-2"/>
           <MainPost data={data[1]} toRow={md}/>
           <MainPost data={data[2]} toRow={md}/>
         </div>
@@ -29,7 +29,7 @@ export const Blog = ({ className }: PropsWhitClassName) => {
         <div className="py-7.5 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <H4 className="md:col-span-2 lg:col-span-3">All blog posts</H4>
           {data.slice(4,10).map((data) => (
-          <MainPost data={data as PostType} />
+          <MainPost data={data as PostType} key={data.id} />
         ))}
         </div>
 
