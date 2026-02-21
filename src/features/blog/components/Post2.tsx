@@ -2,7 +2,7 @@ import image from "@/assets/Image-4.png";
 import { Caption, H4, P } from "@/shared/components/Typography";
 import { cn } from "@/shared/lib/utils";
 import type { PropsWhitClassName } from "@/shared/types";
-import { Button } from "@/shared/ui/button";
+import { Badge } from "@/shared/ui/badge";
 import { ArrowUpRight } from "lucide-react";
 
 export default function Post2({ className }: PropsWhitClassName) {
@@ -24,15 +24,10 @@ export default function Post2({ className }: PropsWhitClassName) {
         </P>
         </div>
       <footer className="flex gap-2">
-        <Button variant="purple" size="special">
-          Design
-        </Button>
-        <Button variant="blue" size="special">
-          Research
-        </Button>
-        <Button variant="red" size="special">
-          Presentation
-        </Button>
+       
+          <Badge variant='purple'>Design</Badge>
+        <Badge variant='blue'>Research</Badge>
+          <Badge variant='red'>Presentation</Badge>
       </footer>
       </main>
     </div>
