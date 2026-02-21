@@ -1,7 +1,5 @@
 import MainPost from "@/features/blog/components/MainPost";
 import PaginationBtns from "@/features/blog/components/Pagination";
-import Post from "@/features/blog/components/Post";
-import Post2 from "@/features/blog/components/Post2";
 import PageTitle from "@/shared/components/PageTitle";
 import { H4 } from "@/shared/components/Typography";
 import useGetPosts from "@/shared/hooks/useGetPosts";
@@ -18,30 +16,23 @@ export const Blog = ({ className }: PropsWhitClassName) => {
   return (
     <div className={cn(className, "col-flex gap-5")}>
       <PageTitle>the blog</PageTitle>
-      <div className="grid grid-cols-3 gap-5">
-        {data.map((data) => (
-          <MainPost data={data as PostType} />
-        ))}
-      </div>
       <main className="px-8 lg:px-0">
         <div className="py-7.5 grid gap-8 lg:grid-cols-2">
           <H4 className="lg:col-span-2">Recent blog posts</H4>
-          <Post2 className="lg:row-span-2" />
-          <Post toRow={md} />
-          <Post toRow={md} />
+          <MainPost data={data[0]}/>
+          <MainPost data={data[1]} toRow={md}/>
+          <MainPost data={data[2]} toRow={md}/>
         </div>
         <div className="py-7.5 grid">
-          <Post2 />
+          <MainPost data={data[3]}/>
         </div>
         <div className="py-7.5 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <H4 className="md:col-span-2 lg:col-span-3">All blog posts</H4>
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
+          {data.slice(4,10).map((data) => (
+          <MainPost data={data as PostType} />
+        ))}
         </div>
+
         <footer className="border-t pt-4 col-flex">
           <PaginationBtns pageDetails={{ pageCount: 10, currentPage: 1 }} />
         </footer>
