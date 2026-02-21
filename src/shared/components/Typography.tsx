@@ -4,7 +4,7 @@ import type { PropsWhitClassName } from "../types";
 
 const textStyls = {
   base: "scroll-m-20",
-  h1: "font-bold uppercase text-center text-nowrap leading-none text-[clamp(3rem,18vw,1440px)]",
+  h1: "font-bold uppercase text-center text-nowrap leading-none text-[clamp(3rem,18vw,250px)]",
   h2: "text-5xl font-semibold tracking-[-0.2%]",
   h3: "text-4xl font-bold leading-8",
   h4: "font-semibold text-2xl",

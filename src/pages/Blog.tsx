@@ -1,24 +1,34 @@
+import MainPost from "@/features/blog/components/MainPost";
 import PaginationBtns from "@/features/blog/components/Pagination";
 import Post from "@/features/blog/components/Post";
 import Post2 from "@/features/blog/components/Post2";
 import PageTitle from "@/shared/components/PageTitle";
 import { H4 } from "@/shared/components/Typography";
+import useGetPosts from "@/shared/hooks/useGetPosts";
 import useResponsive from "@/shared/hooks/useResponsive";
 import { cn } from "@/shared/lib/utils";
-import type { PropsWhitClassName } from "@/shared/types";
+import type { Post as PostType, PropsWhitClassName } from "@/shared/types";
 
-export const Blog = ({className}:PropsWhitClassName) => {
-  const {md} = useResponsive();
-  console.log(md);
+export const Blog = ({ className }: PropsWhitClassName) => {
+  const { md } = useResponsive();
+  const { data, isLoading } = useGetPosts();
+  if (isLoading) return <PageTitle>Loading...</PageTitle>;
+  if (!data) return <PageTitle>not Fontd</PageTitle>;
+
   return (
-    <div className={cn(className,"col-flex gap-5")}>
+    <div className={cn(className, "col-flex gap-5")}>
       <PageTitle>the blog</PageTitle>
+      <div className="grid grid-cols-3 gap-5">
+        {data.map((data) => (
+          <MainPost data={data as PostType} />
+        ))}
+      </div>
       <main className="px-8 lg:px-0">
         <div className="py-7.5 grid gap-8 lg:grid-cols-2">
           <H4 className="lg:col-span-2">Recent blog posts</H4>
-          <Post2 className="lg:row-span-2"/>
-          <Post toRow={md}/>
-          <Post toRow={md}/>
+          <Post2 className="lg:row-span-2" />
+          <Post toRow={md} />
+          <Post toRow={md} />
         </div>
         <div className="py-7.5 grid">
           <Post2 />
