@@ -46,7 +46,7 @@ export default function usePostsTable() {
   });
 
   const table = useReactTable({
-    data: posts as Post[],
+    data: (posts as Post[]) ?? [],
     columns: postsColumns,
     getCoreRowModel: getCoreRowModel(),
 
