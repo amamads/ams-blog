@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { Query, type Models } from "appwrite";
-import type { Post, PostBadge, PostContent, PostRow } from "../types";
+import { databaseId } from "../consts";
 import { db } from "../services/appwrite";
-import { databaseId, tableId } from "../consts";
+import type { Post, PostBadge, PostContent, PostRow } from "../types";
 
 export default function useGetPosts() {
   return useQuery<Models.RowList<PostRow>, Error, Post[]>({
@@ -10,7 +10,7 @@ export default function useGetPosts() {
     queryFn: async () =>
       await db.listRows({
         databaseId,
-        tableId,
+        tableId:'posts',
         queries: [Query.limit(100)],
       }),
     select: (data) =>

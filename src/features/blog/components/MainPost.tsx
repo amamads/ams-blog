@@ -5,7 +5,7 @@ import { cn } from "@/shared/lib/utils";
 import type { Post, PropsWhitClassName } from "@/shared/types";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
-import PostBadge from "./PostBadge";
+import PostBadge from "../../../shared/components/PostBadge";
 
 export default function MainPost({
   className,
@@ -31,15 +31,6 @@ export default function MainPost({
         </div>
         <footer className="flex gap-2">
           {badges.map((badge,i)=><PostBadge key={i} title={badge}/>)}
-          {/* <Button variant="purple" size="special">
-            Design
-          </Button>
-          <Button variant="blue" size="special">
-            Research
-          </Button>
-          <Button variant="red" size="special">
-            Presentation
-          </Button> */}
         </footer>
       </main>
     </Link>

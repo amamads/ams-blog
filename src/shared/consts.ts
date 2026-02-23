@@ -1,6 +1,5 @@
 import type { Post } from "./types";
 export const databaseId = "6956496c001c4cef2abb";
-export const tableId = "posts";
 
 
 export const posts: Post[] = [

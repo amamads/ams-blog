@@ -27,7 +27,7 @@ export default function MenuSheet({ className }: PropsWhitClassName) {
         <SheetContent
           showCloseButton={false}
           className={cn(
-            "w-[101vw]! inset-0 flex-center bg-card text-card-foreground",
+            "w-[101vw]! inset-0 flex-center bg-white dark:bg-black text-card-foreground",
           )}
         >
           <H4>Your Name</H4>

@@ -24,8 +24,8 @@ export const About = () => {
         <div>
             <H4>Skills:</H4>
             <ul className="list-disc list-inside pl-3">
-              {[1, 2, 3, 4, 5, 6, 7].map(() => (
-                <li className="text-sm text-card-foreground">
+              {[1, 2, 3, 4, 5, 6, 7].map((num) => (
+                <li className="text-sm text-card-foreground" key={num}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
                   iusto accusantium odio alias, optio veritatis harum
                   voluptatum!

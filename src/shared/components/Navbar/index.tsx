@@ -6,27 +6,32 @@ import { Link, useLocation } from "react-router";
 import ThemeButton from "./components/ThemeButton";
 import { navbarItems } from "./consts";
 import { Button } from "@/shared/ui/button";
+import { selectUser, useAuthStore } from "@/shared/store/auth-store";
 
 export default function Navbar({ className }: PropsWhitClassName) {
   const { pathname } = useLocation();
+  const user = useAuthStore(selectUser);
   return (
     <nav
-      className={cn(className, "w-full p-5 lg:px-0! flex justify-between items-center")}
+      className={cn(
+        className,
+        "w-full p-5 lg:px-0! flex justify-between items-center",
+      )}
     >
-      <H4 className="text-nowrap">Your Name</H4>
+      <H4 className="text-nowrap">{user ? user.username : "Your Name"}</H4>
       <MenuSheet className="md:hidden" />
 
       <div className="max-md:hidden flex items-center gap-3.5">
         {navbarItems.map(({ title, path }) => (
           <Button
-          key={title}
+            key={title}
             variant="ghost"
             size="lg"
             className={cn(
               "rounded-none p-0 m-2",
               pathname === path && "border-b border-foreground font-bold",
             )}
-           >
+          >
             <Link to={path}>{capitalize(title)}</Link>
           </Button>
         ))}

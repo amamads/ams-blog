@@ -1,4 +1,5 @@
 import type { Models } from "appwrite";
+export type RouteValue = string | ((id:string)=>string);
 
 export type PropsWhitClassName = {className?:string};
 export type LinkItem = {title:string,path:string};
