@@ -1,4 +1,3 @@
-import AuthLayout from "@/layouts/authLayout";
 import MainLayout from "@/layouts/MainLayout";
 import {
   About,
@@ -13,6 +12,7 @@ import {
 import { createBrowserRouter } from "react-router";
 import App from "../App";
 import { ROUTES } from "./paths";
+import AuthLayout from "@/layouts/AuthLayout";
 
 const router = createBrowserRouter([
   {

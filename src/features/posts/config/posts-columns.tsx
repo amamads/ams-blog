@@ -1,13 +1,11 @@
-import { Checkbox } from "@/shared/ui/checkbox";
-import type { Post, PostBadge as PostBadgeType, PostContent } from "@/shared/types";
-import { type ColumnDef } from "@tanstack/react-table";
+import PostBadge from "@/shared/components/PostBadge";
 import { P } from "@/shared/components/Typography";
 import formatDate from "@/shared/lib/formatDate";
+import type { Post, PostBadge as PostBadgeType } from "@/shared/types";
 import { Button } from "@/shared/ui/button";
-import { Link } from "react-router";
-import { ROUTES } from "@/router/paths";
-import PostBadge from "@/shared/components/PostBadge";
+import { Checkbox } from "@/shared/ui/checkbox";
 import { Popover, PopoverContent, PopoverTrigger } from "@/shared/ui/popover";
+import { type ColumnDef } from "@tanstack/react-table";
 
 export const postsColumns: ColumnDef<Post>[] = [
   {
@@ -71,7 +69,7 @@ export const postsColumns: ColumnDef<Post>[] = [
     
     accessorKey: "content",
     header: "Content",
-    cell: ({ row, getValue }) => {
+    cell: () => {
       return (
         <Popover>
           <PopoverTrigger asChild>
