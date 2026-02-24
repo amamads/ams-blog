@@ -80,7 +80,7 @@ export const postsColumns: ColumnDef<Post>[] = [
   },
   {
     id:'menu',
-    //  cell: ({table,row})=><MenuDropdown table={table}/>
      cell: ({row})=><MenuDropdown row={row}/>
-  }
+  },
+  {accessorKey:'image'}
 ];

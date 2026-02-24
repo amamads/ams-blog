@@ -8,7 +8,7 @@ import { Form, FormDescription } from "@/shared/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router";
-import TextFormField from "./TextFormField";
+import TextFormField from "../../../shared/components/TextFormField";
 
 export default function LoginForm() {
   const { data: users, isError, error } = useGetUsers();

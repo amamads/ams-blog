@@ -25,10 +25,10 @@ import { postsColumns } from "../config/posts-columns";
 // };
 
 export default function usePostsTable() {
-  const { data:posts, isLoading, isError, error } = useGetPosts();
+  const { data: posts, isLoading, isError, error } = useGetPosts();
   // const { data, isLoading, isError, error } = defaultData;
   // const users = data;
-//   const tasks = data?.rows;
+  //   const tasks = data?.rows;
 
   const [sorting, setSorting] = useState<SortingState>([]);
   const [globalFilter, setGlobalFilter] = useState("");
@@ -41,8 +41,7 @@ export default function usePostsTable() {
 
   // const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
-    firstName: false,
-    lastName: false,
+    image: false,
   });
 
   const table = useReactTable({
@@ -50,8 +49,8 @@ export default function usePostsTable() {
     columns: postsColumns,
     getCoreRowModel: getCoreRowModel(),
 
-    columnResizeMode:'onChange',
-    enableColumnResizing:true,
+    columnResizeMode: "onChange",
+    enableColumnResizing: true,
     // defaultColumn:{},
 
     getSortedRowModel: getSortedRowModel(),

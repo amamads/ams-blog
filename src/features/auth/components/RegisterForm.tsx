@@ -9,7 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router";
 import useAddUser from "../hooks/useAddUser";
-import TextFormField from "./TextFormField";
+import TextFormField from "../../../shared/components/TextFormField";
 
 export default function RegisterForm() {
   const { data: users, isError, error } = useGetUsers();

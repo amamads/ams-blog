@@ -1,5 +1,6 @@
 import type { Post } from "./types";
 export const databaseId = "6956496c001c4cef2abb";
+export const postBadges = ['design' , 'research' ,'presenation' , 'frameworks' , 'management','leadership','product','customer success','Tools','SaaS']
 
 
 export const posts: Post[] = [
