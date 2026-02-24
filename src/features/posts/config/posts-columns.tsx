@@ -1,11 +1,13 @@
+import { ROUTES } from "@/router/paths";
 import PostBadge from "@/shared/components/PostBadge";
 import { P } from "@/shared/components/Typography";
 import formatDate from "@/shared/lib/formatDate";
 import type { Post, PostBadge as PostBadgeType } from "@/shared/types";
 import { Button } from "@/shared/ui/button";
 import { Checkbox } from "@/shared/ui/checkbox";
-import { Popover, PopoverContent, PopoverTrigger } from "@/shared/ui/popover";
 import { type ColumnDef } from "@tanstack/react-table";
+import { Link } from "react-router";
+import MenuDropdown from "../components/MenuDropdown";
 
 export const postsColumns: ColumnDef<Post>[] = [
   {
@@ -66,26 +68,19 @@ export const postsColumns: ColumnDef<Post>[] = [
     ),
   },
   {
-    
     accessorKey: "content",
     header: "Content",
-    cell: () => {
+    cell: ({ row }) => {
       return (
-        <Popover>
-          <PopoverTrigger asChild>
-            <Button className="px-3">Show
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent className="h-40 overflow-auto">
-            {/* <p>{JSON.stringify(getValue(),null,2)}</p> */}
-          </PopoverContent>
-        </Popover>
+        <Button className="px-3">
+          <Link to={ROUTES.blogDetailFn(row.getValue("id"))}>Show</Link>
+        </Button>
       );
     },
-    // cell: ({ row }) => (
-    //   <Button className="px-3">
-    //     <Link to={ROUTES.blogDetailFn(row.getValue("id"))}>get Page</Link>
-    //   </Button>
-    // ),
   },
+  {
+    id:'menu',
+    //  cell: ({table,row})=><MenuDropdown table={table}/>
+     cell: ({row})=><MenuDropdown row={row}/>
+  }
 ];
