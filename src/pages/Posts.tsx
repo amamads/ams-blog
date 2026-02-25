@@ -8,7 +8,7 @@ export const Posts = () => {
     <div>
       <div className="px-5 space-y-5">
         <header className="flex justify-end">
-        <AddPostSheet table={table}/>
+        <AddPostSheet/>
         </header>
         <Table table={table} />
       </div>
