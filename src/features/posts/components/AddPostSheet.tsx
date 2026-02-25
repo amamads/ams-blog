@@ -149,7 +149,6 @@ export default function AddPostSheet() {
         },
         onError: (err) => {
           setError("root", {
-            // message: "Failed to update post. Please try again.",
             message: err.message,
           });
         },
@@ -166,7 +165,7 @@ export default function AddPostSheet() {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(fromOnSubmit)}
-            className="space-y-5 col-flex"
+            className="col-flex gap-5 h-full"
           >
             <TextFormField
               control={control}
@@ -192,75 +191,9 @@ export default function AddPostSheet() {
               <DatePicker control={control} name="date" />
             </div>
 
-            {/* <div className="space-y-5 border p-3 rounded-lg">
-              <H4>Content</H4>
-              {fields.map((field, i) => {
-                if (field.type === "image")
-                  return (
-                    <Card key={field.id} className="px-5">
-                      <H5>Image</H5>
-                      <TextFormField
-                        control={control}
-                        name={`content.${i}.src`}
-                        label="Image URL"
-                        placeholder="Enter Image URL"
-                      />
-                      <TextFormField
-                        control={control}
-                        name={`content.${i}.alt`}
-                        label="Image ALT"
-                        placeholder="Enter Image ALT"
-                      />
-                      <Button
-                        className="py-5"
-                        onClick={() => remove(i)}
-                        type="button"
-                      >
-                        Delete
-                      </Button>
-                    </Card>
-                  );
-
-                return (
-                  <Card key={field.id} className="px-5">
-                    <H5>Text</H5>
-                    <TextAreaFormField
-                      control={control}
-                      name={`content.${i}.content`}
-                      label="Content"
-                      placeholder="Enter Content"
-                    />
-                    <Button
-                      className="py-5"
-                      onClick={() => remove(i)}
-                      type="button"
-                    >
-                      Delete
-                    </Button>
-                  </Card>
-                );
-              })}
-              <div className="flex  justify-center gap-5">
-                <Button
-                  type="button"
-                  className="p-5"
-                  onClick={() => append({ type: "text", content: "" })}
-                >
-                  Add Text
-                </Button>
-                <Button
-                  type="button"
-                  className="p-5"
-                  onClick={() => append({ type: "image", src: "", alt: "" })}
-                >
-                  Add Image
-                </Button>
-              </div>
-            </div> */}
-
             <Collapsible>
               <CollapsibleTrigger asChild>
-                <Button variant="ghost" className="mb-5">
+                <Button className="mb-5 py-5">
                   <H4>Content</H4>
                   <ChevronDown className="-rotate-90 [[data-state=open]>&]:rotate-0" />
                 </Button>
@@ -338,6 +271,7 @@ export default function AddPostSheet() {
             <Button type="submit" size="lg" className="mt-auto">
               {isPending ? "Submiting..." : "Submit"}
             </Button>
+
             {errors.root && (
               <FormDescription className="text-destructive">
                 {errors.root.message}
