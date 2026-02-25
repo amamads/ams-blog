@@ -111,7 +111,7 @@ const defaultValues: FormStateType = {
 };
 
 export default function AddPostSheet() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const { mutate: addPost, isPending } = useAddPost();
   const form = useForm<FormStateType>({
     resolver: zodResolver(schema),
