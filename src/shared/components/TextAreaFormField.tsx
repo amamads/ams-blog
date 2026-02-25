@@ -31,7 +31,7 @@ export default function TextAreaFormField<TFieldValues extends FieldValues>({
           <FormControl>
             <Textarea
               placeholder={placeholder}
-              className="overflow-auto resize-none"
+              className="overflow-auto resize-none max-h-40"
               {...field}
             />
           </FormControl>

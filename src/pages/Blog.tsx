@@ -13,6 +13,8 @@ export const Blog = ({ className }: PropsWhitClassName) => {
   if (isLoading) return <PageTitle>Loading...</PageTitle>;
   if (!data) return <PageTitle>not Fontd</PageTitle>;
 
+  console.log(data[0]);
+
   return (
     <div className={cn(className, "col-flex gap-5")}>
       <PageTitle>the blog</PageTitle>

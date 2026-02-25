@@ -16,12 +16,13 @@ export type Post = {
     image:string;
     content:PostContent[];
 }
-
-export type PostRow = Models.Row & {
+export type SendPost ={
   title: string;
   date: string;
   badges: string;     
   description: string;
   image: string;
   content: string;   
-};
+}
+
+export type PostRow = Models.Row & SendPost;

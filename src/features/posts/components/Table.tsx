@@ -1,4 +1,5 @@
 import { cn } from "@/shared/lib/utils";
+import type { Post } from "@/shared/types";
 import { ScrollArea, ScrollBar } from "@/shared/ui/scroll-area";
 import {
   TableBody,
@@ -14,7 +15,7 @@ type CustomColumnMeta = {
   tdClassName?: string;
 };
 
-export default function Table<T>({ table }: { table: TableType<T> }) {
+export default function Table({ table }: { table: TableType<Post> }) {
   return (
     <ScrollArea className="border rounded-lg">
       <TableEl>
