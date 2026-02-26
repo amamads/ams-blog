@@ -13,4 +13,3 @@ export default function App() {
     </main>
   );
 }
-// wsl --import Ubuntu-22.04 E:\WSL\Ubuntu-22.04 E:\WSL\yaho\install.tar.gz --version 2

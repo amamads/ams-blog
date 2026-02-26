@@ -5,7 +5,7 @@ import type { PropsWhitClassName } from "@/shared/types";
 import { Badge } from "@/shared/ui/badge";
 import { ArrowUpRight } from "lucide-react";
 
-export default function Post2({ className }: PropsWhitClassName) {
+export default function FakePost2({ className }: PropsWhitClassName) {
   return (
     <div className={cn(className, "col-flex gap-6 md:gap-8")}>
       <header className="sm:max-h-57">

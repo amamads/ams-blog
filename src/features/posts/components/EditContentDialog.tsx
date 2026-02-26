@@ -19,7 +19,7 @@ import { Edit } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
-import useEditPost from "../hooks/useEditPost";
+import useEditPost from "../../../shared/hooks/useEditPost";
 
 const schema = z.object({
   text: z.string().min(1).max(10000).nullable(),

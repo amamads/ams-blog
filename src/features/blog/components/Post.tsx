@@ -1,66 +1,53 @@
-import image from "@/assets/Image.png";
+import { ROUTES } from "@/router/paths";
 import { Caption, H4, P } from "@/shared/components/Typography";
+import formatDate from "@/shared/lib/formatDate";
 import { cn } from "@/shared/lib/utils";
-import type { PropsWhitClassName } from "@/shared/types";
-import { Badge } from "@/shared/ui/badge";
+import type { Post, PropsWhitClassName } from "@/shared/types";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
+import PostBadge from "../../../shared/components/PostBadge";
+import CommentDialog from "./CommentDialog";
+import LikeBtn from "./LikeBtn";
 
 export default function Post({
-  className,toRow,
-}: PropsWhitClassName & { toRow?: boolean }) {
+  className,
+  toRow,
+  data: { title, date, badges, description, image, id, likes, comments },
+}: PropsWhitClassName & { toRow?: boolean; data: Post }) {
+
   return (
-    <Link className={cn(className, "col-flex gap-6", toRow && "flex-row")} to='/blog/demo'>
+    <div className={cn(className, "col-flex gap-6", toRow && "flex-row")}>
       <header className="h-50 min-w-80">
-        <img src={image} className="size-full object-cover object-center" />
+        <Link to={ROUTES.blogDetailFn(id)}>
+          <img
+            src={image}
+            className="size-full object-cover object-center"
+            alt={description}
+          />
+        </Link>
       </header>
       <main className="col-flex gap-6">
-        <div className="col-flex gap-3">
-          <Caption>Sunday , 1 Jan 2023</Caption>
-          <div className="flex justify-between">
-            <H4>UX review presentations</H4>
-            <ArrowUpRight />
+        <Link to={ROUTES.blogDetailFn(id)}>
+          <div className="col-flex gap-3">
+            <Caption>{formatDate(date)}</Caption>
+            <div className="flex justify-between">
+              <H4>{title}</H4>
+              <ArrowUpRight />
+            </div>
+            <P>{description}</P>
           </div>
-          <P>
-            How do you create compelling presentations that wow your colleagues
-            and impress your managers?
-          </P>
-        </div>
+        </Link>
         <footer className="flex gap-2">
-          <Badge variant='purple'>Design</Badge>
-          <Badge variant='blue'>Research</Badge>
-          <Badge variant='red'>Presentation</Badge>
+          <div className="space-x-2">
+            {badges.map((badge, i) => (
+              <PostBadge key={i} title={badge} />
+            ))}
+          </div>
+
+          <LikeBtn likes={likes} rowId={id} />
+          <CommentDialog comments={comments} title={title} rowId={id} />
         </footer>
       </main>
-    </Link>
-    // <div className={cn(className, "col-flex gap-6", toRow && "flex-row")} onClick={()=>console.log('ahasfd')}>
-    //   <header className="h-50 min-w-80">
-    //     <img src={image} className="size-full object-cover object-center" />
-    //   </header>
-    //   <main className="col-flex gap-6">
-    //     <div className="col-flex gap-3">
-    //       <Caption>Sunday , 1 Jan 2023</Caption>
-    //       <div className="flex justify-between">
-    //         <H4>UX review presentations</H4>
-    //         <ArrowUpRight />
-    //       </div>
-    //       <P>
-    //         How do you create compelling presentations that wow your colleagues
-    //         and impress your managers?
-    //       </P>
-    //     </div>
-    //     <footer className="flex gap-2">
-    //       <Button variant="purple" size="special">
-    //         Design
-    //       </Button>
-    //       <Button variant="blue" size="special">
-    //         Research
-    //       </Button>
-    //       <Button variant="red" size="special">
-    //         Presentation
-    //       </Button>
-    //     </footer>
-    //   </main>
-    // </div>
+    </div>
   );
 }

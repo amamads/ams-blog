@@ -11,7 +11,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
 import TextFormField from "../../../shared/components/TextFormField";
-import useEditPost from "../hooks/useEditPost";
+import useEditPost from "../../../shared/hooks/useEditPost";
 import DatePicker from "./DatePicker";
 import BadgesSelectBox from "./BadgesSelectBox";
 

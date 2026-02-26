@@ -142,6 +142,8 @@ export default function AddPostSheet() {
         ...data,
         content: JSON.stringify(data.content),
         badges: data.badges.join("|"),
+        likes: JSON.stringify([]),
+        comments: JSON.stringify({}),
       },
       {
         onSuccess: () => {
@@ -269,7 +271,7 @@ export default function AddPostSheet() {
             </Collapsible>
 
             <Button type="submit" size="lg" className="mt-auto">
-              {isPending ? "Submiting..." : "Submit"}
+              {isPending ? "Adding..." : "Add"}
             </Button>
 
             {errors.root && (

@@ -15,12 +15,14 @@ export default function useGetPosts() {
       }),
     select: (data) =>
       data.rows.map(
-        ({ $id: id, title, date, badges, description, image, content }) => ({
+        ({ $id: id, title, date, badges,likes,comments, description, image, content }) => ({
           id,
           title,
           date,
           description,
           image,
+          likes:JSON.parse(likes),
+          comments:JSON.parse(comments),
           badges: badges.split("|") as PostBadge[],
           content: JSON.parse(content) as PostContent[],
         }),

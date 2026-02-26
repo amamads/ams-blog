@@ -1,4 +1,4 @@
-import Post from "@/features/blog/components/Post";
+import FakePost from "@/features/blog/components/FakePost";
 import { Caption, H2, H4, P, Small } from "@/shared/components/Typography";
 import { Button } from "@/shared/ui/button";
 import { Input } from "@/shared/ui/input";
@@ -33,9 +33,9 @@ export const Newsletter = () => {
       </header>
       <main className="py-8 grid md:grid-cols-2 lg:grid-cols-3 gap-12">
         <H4 className="md:col-span-2 lg:col-span-3">Recent blog posts</H4>
-        <Post />
-        <Post />
-        <Post />
+        <FakePost />
+        <FakePost />
+        <FakePost />
       </main>
     </div>
   );

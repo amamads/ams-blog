@@ -11,7 +11,6 @@ export default function useGetUsers() {
       await db.listRows({
         databaseId,
         tableId:'users',
-        // queries: [Query.limit(100)],
       }),
     select: (data) =>
       data.rows.map(

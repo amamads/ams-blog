@@ -6,7 +6,6 @@ import type { Models } from "appwrite";
 
 export default function useEditPost() {
     const queryClient = useQueryClient();
-    // return useMutation<Models.Row, Error, { rowId: string, data: Partial<Post> }>({
     return useMutation<Models.Row, Error, { rowId: string, data: Partial<PostRow> }>({
         mutationFn: ({ rowId, data }) => db.updateRow({databaseId,tableId:'posts',rowId,data}),
         onSuccess: () => {

@@ -1,4 +1,4 @@
-import MainPost from "@/features/blog/components/MainPost";
+import Post from "@/features/blog/components/Post";
 import PaginationBtns from "@/features/blog/components/Pagination";
 import PageTitle from "@/shared/components/PageTitle";
 import { H4 } from "@/shared/components/Typography";
@@ -13,25 +13,23 @@ export const Blog = ({ className }: PropsWhitClassName) => {
   if (isLoading) return <PageTitle>Loading...</PageTitle>;
   if (!data) return <PageTitle>not Fontd</PageTitle>;
 
-  console.log(data[0]);
-
   return (
     <div className={cn(className, "col-flex gap-5")}>
       <PageTitle>the blog</PageTitle>
       <main className="px-8 lg:px-0">
         <div className="py-7.5 grid gap-8 lg:grid-cols-2">
           <H4 className="lg:col-span-2">Recent blog posts</H4>
-          <MainPost data={data[0]} className="lg:row-span-2"/>
-          <MainPost data={data[1]} toRow={md}/>
-          <MainPost data={data[2]} toRow={md}/>
+          <Post data={data[0]} className="lg:row-span-2"/>
+          <Post data={data[1]} toRow={md}/>
+          <Post data={data[2]} toRow={md}/>
         </div>
         <div className="py-7.5 grid">
-          <MainPost data={data[3]}/>
+          <Post data={data[3]}/>
         </div>
         <div className="py-7.5 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <H4 className="md:col-span-2 lg:col-span-3">All blog posts</H4>
           {data.slice(4,10).map((data) => (
-          <MainPost data={data as PostType} key={data.id} />
+          <Post data={data as PostType} key={data.id} />
         ))}
         </div>
 
